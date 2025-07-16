@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futuristic Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: #0a0a0a;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glowing-circle {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #00ff87, #60efff);
+            filter: blur(30px);
+            animation: rotate 10s linear infinite;
+            opacity: 0.5;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg) translate(-50px) rotate(0deg); }
+            100% { transform: rotate(360deg) translate(-50px) rotate(-360deg); }
+        }
+
+        .header-content {
+            text-align: center;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #00ff87, #60efff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 10px #00ff87; }
+            to { text-shadow: 0 0 20px #60efff; }
+        }
+
+        .section {
+            margin: 4rem 0;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .experience-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .experience-card:hover {
+            transform: scale(1.02);
+        }
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+
+        .skill-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1rem;
+            border-radius: 5px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .skill-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact a {
+            color: #00ff87;
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .contact a:hover {
+            color: #60efff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="glowing-circle"></div>
+        <div class="header-content">
+            <h1>SRI AAKASH</h1>
+            <p>Tech Enthusiast</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="section" id="about">
+            <h2>About Me</h2>
+            <p>A passionate developer with expertise in creating innovative solutions.</p>
+        </section>
+
+        <!-- <section class="section" id="experience">
+            <h2>Experience</h2>
+            <div class="experience-card">
+                <h3>Senior Developer - Tech Corp</h3>
+                <p>2020 - Present</p>
+                <p>Led development of scalable web applications using modern technologies.</p>
+            </div>
+            <div class="experience-card">
+                <h3>Web Developer - Digital Solutions</h3>
+                <p>2018 - 2020</p>
+                <p>Developed and maintained client websites and applications.</p>
+            </div>
+        </section> -->
+
+        <section class="section" id="skills">
+            <h2>Skills</h2>
+            <div class="skills">
+                <div class="skill-item">JavaScript</div>
+                <div class="skill-item">React</div>
+                <div class="skill-item">Node.js</div>
+                <div class="skill-item">Python</div>
+                <div class="skill-item">AWS</div>
+                <div class="skill-item">Docker</div>
+                <div class="skill-item">......</div>
+            </div>
+        </section>
+
+        <section class="section" id="contact">
+            <h2>Contact</h2>
+            <div class="contact">
+                <a href="sriaakash@yahoo.com">Email</a>
+                <a href="www.linkedin.com/in/sriaakashh">LinkedIn</a>
+                <a href="https://github.com/SriAakash-Github">GitHub</a>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Intersection Observer for scroll animations
+        const sections = document.querySelectorAll('.section');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>

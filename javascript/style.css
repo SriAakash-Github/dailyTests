@@ -1,0 +1,26 @@
+body {
+    background-color: #f0f0f0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+h1 {
+    color: red;
+}
+p {
+    color: blue;
+}
+button {
+    background-color: green;
+    color: white;
+    padding: 10px 20px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    
+}
