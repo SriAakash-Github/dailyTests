@@ -1,0 +1,46 @@
+#Count {
+    font-size: 40px;
+    color: #8b5858;
+    margin-top: 20px;
+    text-align: center;
+    display: block;
+
+}
+
+#btncontainer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.incbt{
+    padding: 10px 15px;
+    background-color: rgb(78, 207, 78);
+    font-size: large;
+    border-radius: 1.5rem;
+    cursor: pointer;
+    transition : background-color 0.2s;
+}
+
+
+.decbt{
+    padding: 10px 15px;
+    background-color: rgb(172, 90, 52);
+    font-size: large;
+    border-radius: 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+
+.resbt{
+    padding: 10px 15px;
+    background-color: rgb(75, 220, 240);
+    font-size: large;
+    border-radius: 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #95a2b600;
+}
